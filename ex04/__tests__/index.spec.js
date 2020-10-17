@@ -1,9 +1,10 @@
 const Sequelize = require('sequelize');
 test('练习04 完成一个一对多查询', async () => {
 
-    const sequelize = new Sequelize({
+    const sequelize = new Sequelize('daoke_ex','root','kkbnode',{
         host: 'localhost',
-        dialect: 'sqlite',
+        // dialect: 'sqlite',
+        dialect: 'mysql',
         operatorsAliases: true,
         // 关闭执行日志
         logging: false
@@ -13,6 +14,7 @@ test('练习04 完成一个一对多查询', async () => {
     const { initModel } = require('../index')
     const { Product, User } = await initModel(sequelize)
 
+    
     // 设置数据
     user = await User.create({
         name: 'Tom',
